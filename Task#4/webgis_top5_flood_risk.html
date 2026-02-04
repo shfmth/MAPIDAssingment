@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_07343b93d0dce42b87dd6c9498c8cd66 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_07343b93d0dce42b87dd6c9498c8cd66" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_07343b93d0dce42b87dd6c9498c8cd66 = L.map(
+                "map_07343b93d0dce42b87dd6c9498c8cd66",
+                {
+                    center: [7.440666666666658, 3.90544444444444],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 15,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_a45cbe488643b8a881a28516d9f68176 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_a45cbe488643b8a881a28516d9f68176.addTo(map_07343b93d0dce42b87dd6c9498c8cd66);
+        
+    
+        function geo_json_a5bf3ca9f79f218762f057fadcd35d6d_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "black", "fillColor": "red", "fillOpacity": 0.6, "weight": 2};
+            }
+        }
+
+        function geo_json_a5bf3ca9f79f218762f057fadcd35d6d_onEachFeature(feature, layer) {
+
+            layer.on({
+            });
+        };
+        var geo_json_a5bf3ca9f79f218762f057fadcd35d6d = L.geoJson(null, {
+                onEachFeature: geo_json_a5bf3ca9f79f218762f057fadcd35d6d_onEachFeature,
+            
+                style: geo_json_a5bf3ca9f79f218762f057fadcd35d6d_styler,
+            ...{
+}
+        });
+
+        function geo_json_a5bf3ca9f79f218762f057fadcd35d6d_add (data) {
+            geo_json_a5bf3ca9f79f218762f057fadcd35d6d
+                .addData(data);
+        }
+            geo_json_a5bf3ca9f79f218762f057fadcd35d6d_add({"features": [{"geometry": {"coordinates": [3.90944444444444, 7.44305555555555], "type": "Point"}, "id": "0", "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+            geo_json_a5bf3ca9f79f218762f057fadcd35d6d.bindTooltip(
+                `<div>
+                     Wilayah: 0
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            geo_json_a5bf3ca9f79f218762f057fadcd35d6d.addTo(map_07343b93d0dce42b87dd6c9498c8cd66);
+        
+    
+            var marker_c1d0b2701220630abf3c1a824098e66f = L.marker(
+                [7.44305555555555, 3.90944444444444],
+                {
+}
+            ).addTo(map_07343b93d0dce42b87dd6c9498c8cd66);
+        
+    
+            var icon_ca764649495f7452deee365b08f74bf2 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_c7e707e2294e645ba2126a555d4a21b0 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_d910b2774c5141f580652f5adb5b5974 = $(`<div id="html_d910b2774c5141f580652f5adb5b5974" style="width: 100.0%; height: 100.0%;">     <div style="width: 200px;">         <h4>Detail Banjir</h4>         <b>Tingkat Risiko:</b> Very_High<br>         <b>Curah Hujan:</b> 101.51561643835623 mm<br>         <b>Kemiringan (Slope):</b> 46.6861419677734<br>         <b>TWI:</b> -3.25036787986755     </div>     </div>`)[0];
+                popup_c7e707e2294e645ba2126a555d4a21b0.setContent(html_d910b2774c5141f580652f5adb5b5974);
+            
+        
+
+        marker_c1d0b2701220630abf3c1a824098e66f.bindPopup(popup_c7e707e2294e645ba2126a555d4a21b0)
+        ;
+
+        
+    
+    
+            marker_c1d0b2701220630abf3c1a824098e66f.bindTooltip(
+                `<div>
+                     Klik untuk info: Very_High
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_c1d0b2701220630abf3c1a824098e66f.setIcon(icon_ca764649495f7452deee365b08f74bf2);
+            
+    
+        function geo_json_25bbdd6565fa1b7a6b32a049c38af568_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "black", "fillColor": "red", "fillOpacity": 0.6, "weight": 2};
+            }
+        }
+
+        function geo_json_25bbdd6565fa1b7a6b32a049c38af568_onEachFeature(feature, layer) {
+
+            layer.on({
+            });
+        };
+        var geo_json_25bbdd6565fa1b7a6b32a049c38af568 = L.geoJson(null, {
+                onEachFeature: geo_json_25bbdd6565fa1b7a6b32a049c38af568_onEachFeature,
+            
+                style: geo_json_25bbdd6565fa1b7a6b32a049c38af568_styler,
+            ...{
+}
+        });
+
+        function geo_json_25bbdd6565fa1b7a6b32a049c38af568_add (data) {
+            geo_json_25bbdd6565fa1b7a6b32a049c38af568
+                .addData(data);
+        }
+            geo_json_25bbdd6565fa1b7a6b32a049c38af568_add({"features": [{"geometry": {"coordinates": [3.90472222222222, 7.44083333333332], "type": "Point"}, "id": "0", "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+            geo_json_25bbdd6565fa1b7a6b32a049c38af568.bindTooltip(
+                `<div>
+                     Wilayah: 200
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            geo_json_25bbdd6565fa1b7a6b32a049c38af568.addTo(map_07343b93d0dce42b87dd6c9498c8cd66);
+        
+    
+            var marker_8caeda5d4ebc20afe457cb393a1801e7 = L.marker(
+                [7.44083333333332, 3.90472222222222],
+                {
+}
+            ).addTo(map_07343b93d0dce42b87dd6c9498c8cd66);
+        
+    
+            var icon_b974b1eb09e4cd936f1a1ef671c0435e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_85f62918189d253b904d4252d28d7ae7 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_1acdba8459fbf5f7340429f368dcb12a = $(`<div id="html_1acdba8459fbf5f7340429f368dcb12a" style="width: 100.0%; height: 100.0%;">     <div style="width: 200px;">         <h4>Detail Banjir</h4>         <b>Tingkat Risiko:</b> Very_High<br>         <b>Curah Hujan:</b> 101.51561643835623 mm<br>         <b>Kemiringan (Slope):</b> 66.4840850830078<br>         <b>TWI:</b> -7.92215728759765     </div>     </div>`)[0];
+                popup_85f62918189d253b904d4252d28d7ae7.setContent(html_1acdba8459fbf5f7340429f368dcb12a);
+            
+        
+
+        marker_8caeda5d4ebc20afe457cb393a1801e7.bindPopup(popup_85f62918189d253b904d4252d28d7ae7)
+        ;
+
+        
+    
+    
+            marker_8caeda5d4ebc20afe457cb393a1801e7.bindTooltip(
+                `<div>
+                     Klik untuk info: Very_High
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_8caeda5d4ebc20afe457cb393a1801e7.setIcon(icon_b974b1eb09e4cd936f1a1ef671c0435e);
+            
+    
+        function geo_json_c670a184cb4e428de29f70955a07cc14_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "black", "fillColor": "red", "fillOpacity": 0.6, "weight": 2};
+            }
+        }
+
+        function geo_json_c670a184cb4e428de29f70955a07cc14_onEachFeature(feature, layer) {
+
+            layer.on({
+            });
+        };
+        var geo_json_c670a184cb4e428de29f70955a07cc14 = L.geoJson(null, {
+                onEachFeature: geo_json_c670a184cb4e428de29f70955a07cc14_onEachFeature,
+            
+                style: geo_json_c670a184cb4e428de29f70955a07cc14_styler,
+            ...{
+}
+        });
+
+        function geo_json_c670a184cb4e428de29f70955a07cc14_add (data) {
+            geo_json_c670a184cb4e428de29f70955a07cc14
+                .addData(data);
+        }
+            geo_json_c670a184cb4e428de29f70955a07cc14_add({"features": [{"geometry": {"coordinates": [3.90583333333333, 7.44], "type": "Point"}, "id": "0", "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+            geo_json_c670a184cb4e428de29f70955a07cc14.bindTooltip(
+                `<div>
+                     Wilayah: 400
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            geo_json_c670a184cb4e428de29f70955a07cc14.addTo(map_07343b93d0dce42b87dd6c9498c8cd66);
+        
+    
+            var marker_f653845e3033940d98b029c85adb4694 = L.marker(
+                [7.44, 3.90583333333333],
+                {
+}
+            ).addTo(map_07343b93d0dce42b87dd6c9498c8cd66);
+        
+    
+            var icon_433a41846ceef9bec86cb7857bbbf869 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_458d6a0d185eb2e06399c7705a3d9cb1 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_d997096cd52923cbfa43aa513eb64795 = $(`<div id="html_d997096cd52923cbfa43aa513eb64795" style="width: 100.0%; height: 100.0%;">     <div style="width: 200px;">         <h4>Detail Banjir</h4>         <b>Tingkat Risiko:</b> Very_High<br>         <b>Curah Hujan:</b> 101.51561643835623 mm<br>         <b>Kemiringan (Slope):</b> 57.849021911621<br>         <b>TWI:</b> -7.55443286895752     </div>     </div>`)[0];
+                popup_458d6a0d185eb2e06399c7705a3d9cb1.setContent(html_d997096cd52923cbfa43aa513eb64795);
+            
+        
+
+        marker_f653845e3033940d98b029c85adb4694.bindPopup(popup_458d6a0d185eb2e06399c7705a3d9cb1)
+        ;
+
+        
+    
+    
+            marker_f653845e3033940d98b029c85adb4694.bindTooltip(
+                `<div>
+                     Klik untuk info: Very_High
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_f653845e3033940d98b029c85adb4694.setIcon(icon_433a41846ceef9bec86cb7857bbbf869);
+            
+    
+        function geo_json_6120e7ae3b2b306a14035a8d6a122606_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "black", "fillColor": "red", "fillOpacity": 0.6, "weight": 2};
+            }
+        }
+
+        function geo_json_6120e7ae3b2b306a14035a8d6a122606_onEachFeature(feature, layer) {
+
+            layer.on({
+            });
+        };
+        var geo_json_6120e7ae3b2b306a14035a8d6a122606 = L.geoJson(null, {
+                onEachFeature: geo_json_6120e7ae3b2b306a14035a8d6a122606_onEachFeature,
+            
+                style: geo_json_6120e7ae3b2b306a14035a8d6a122606_styler,
+            ...{
+}
+        });
+
+        function geo_json_6120e7ae3b2b306a14035a8d6a122606_add (data) {
+            geo_json_6120e7ae3b2b306a14035a8d6a122606
+                .addData(data);
+        }
+            geo_json_6120e7ae3b2b306a14035a8d6a122606_add({"features": [{"geometry": {"coordinates": [3.89805555555555, 7.43972222222221], "type": "Point"}, "id": "0", "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+            geo_json_6120e7ae3b2b306a14035a8d6a122606.bindTooltip(
+                `<div>
+                     Wilayah: 440
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            geo_json_6120e7ae3b2b306a14035a8d6a122606.addTo(map_07343b93d0dce42b87dd6c9498c8cd66);
+        
+    
+            var marker_b1a83d5453d3b4b5155e8e296cd2ff11 = L.marker(
+                [7.43972222222221, 3.89805555555555],
+                {
+}
+            ).addTo(map_07343b93d0dce42b87dd6c9498c8cd66);
+        
+    
+            var icon_73b23230b394d83f13e6e9e60fcc127c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_926986ab20f70b84c9780cc89bea6fd5 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_950f4213e92dfde2845c39b36bf814a6 = $(`<div id="html_950f4213e92dfde2845c39b36bf814a6" style="width: 100.0%; height: 100.0%;">     <div style="width: 200px;">         <h4>Detail Banjir</h4>         <b>Tingkat Risiko:</b> Very_High<br>         <b>Curah Hujan:</b> 101.51561643835623 mm<br>         <b>Kemiringan (Slope):</b> 56.3099327087402<br>         <b>TWI:</b> -7.9010066986083896     </div>     </div>`)[0];
+                popup_926986ab20f70b84c9780cc89bea6fd5.setContent(html_950f4213e92dfde2845c39b36bf814a6);
+            
+        
+
+        marker_b1a83d5453d3b4b5155e8e296cd2ff11.bindPopup(popup_926986ab20f70b84c9780cc89bea6fd5)
+        ;
+
+        
+    
+    
+            marker_b1a83d5453d3b4b5155e8e296cd2ff11.bindTooltip(
+                `<div>
+                     Klik untuk info: Very_High
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_b1a83d5453d3b4b5155e8e296cd2ff11.setIcon(icon_73b23230b394d83f13e6e9e60fcc127c);
+            
+    
+        function geo_json_1b80e40ffe09d8156ba9df6d0fc812f2_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "black", "fillColor": "red", "fillOpacity": 0.6, "weight": 2};
+            }
+        }
+
+        function geo_json_1b80e40ffe09d8156ba9df6d0fc812f2_onEachFeature(feature, layer) {
+
+            layer.on({
+            });
+        };
+        var geo_json_1b80e40ffe09d8156ba9df6d0fc812f2 = L.geoJson(null, {
+                onEachFeature: geo_json_1b80e40ffe09d8156ba9df6d0fc812f2_onEachFeature,
+            
+                style: geo_json_1b80e40ffe09d8156ba9df6d0fc812f2_styler,
+            ...{
+}
+        });
+
+        function geo_json_1b80e40ffe09d8156ba9df6d0fc812f2_add (data) {
+            geo_json_1b80e40ffe09d8156ba9df6d0fc812f2
+                .addData(data);
+        }
+            geo_json_1b80e40ffe09d8156ba9df6d0fc812f2_add({"features": [{"geometry": {"coordinates": [3.90916666666666, 7.43972222222221], "type": "Point"}, "id": "0", "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+            geo_json_1b80e40ffe09d8156ba9df6d0fc812f2.bindTooltip(
+                `<div>
+                     Wilayah: 480
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            geo_json_1b80e40ffe09d8156ba9df6d0fc812f2.addTo(map_07343b93d0dce42b87dd6c9498c8cd66);
+        
+    
+            var marker_ac0101cb00f77b2191d88bd0b0d9aa09 = L.marker(
+                [7.43972222222221, 3.90916666666666],
+                {
+}
+            ).addTo(map_07343b93d0dce42b87dd6c9498c8cd66);
+        
+    
+            var icon_4fb4a0af672de68421a9de925f46964a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_0b788e7c1ac76e6c7b681958df1fed49 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_8ab02533ab2079feaad8531e1b584276 = $(`<div id="html_8ab02533ab2079feaad8531e1b584276" style="width: 100.0%; height: 100.0%;">     <div style="width: 200px;">         <h4>Detail Banjir</h4>         <b>Tingkat Risiko:</b> Very_High<br>         <b>Curah Hujan:</b> 101.51561643835623 mm<br>         <b>Kemiringan (Slope):</b> 69.7055969238281<br>         <b>TWI:</b> -8.4903335571289     </div>     </div>`)[0];
+                popup_0b788e7c1ac76e6c7b681958df1fed49.setContent(html_8ab02533ab2079feaad8531e1b584276);
+            
+        
+
+        marker_ac0101cb00f77b2191d88bd0b0d9aa09.bindPopup(popup_0b788e7c1ac76e6c7b681958df1fed49)
+        ;
+
+        
+    
+    
+            marker_ac0101cb00f77b2191d88bd0b0d9aa09.bindTooltip(
+                `<div>
+                     Klik untuk info: Very_High
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_ac0101cb00f77b2191d88bd0b0d9aa09.setIcon(icon_4fb4a0af672de68421a9de925f46964a);
+            
+</script>
+</html>
