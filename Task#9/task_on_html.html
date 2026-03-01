@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task On HTML 9</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+</head>
+<body>
+    <head>
+        <title class="judul">Task On HTML</title>
+    </head>
+
+    <body>
+        <header>
+            <h2 class="judul1">Infografis Kota Bandung</h2>
+        </header>
+
+        <nav>
+            <ul>
+              <a href="#home">Home</a>  
+              <a href="#materi">Materi</a> 
+              <a href="#about">Kontak</a>
+            </ul>
+        </nav>
+
+        <main>
+            <section class="pages" id ="home">
+                <h2 class="judul2">Kota Bandung</h2>
+                <p class="desk_bdg">
+                    Kota Bandung adalah sebuah kota sekaligus ibu kota provinsi di Provinsi Jawa Barat, Indonesia. Kota Bandung juga merupakan kota terbesar ketiga di Indonesia, setelah Jakarta dan Kota Surabaya. 
+                    Kota ini menjadi kota terpadat kedua di Indonesia setelah Jakarta dengan kepadatan mencapai 15.051 jiwa/km2.
+                    Terletak 141 km di sebelah tenggara Jakarta, 363 km di sebelah barat laut Kota Semarang, 400 km di sebelah barat Kota Yogyakarta, 675 km (lewat Kota Semarang) & 765 km (lewat Kota Yogyakarta) di sebelah barat Kota Surabaya. 
+                    Kota Bandung merupakan kota terbesar di bagian selatan Pulau Jawa.
+                </p>
+            </section>
+
+            <section class = "pages" id ="materi">
+                <h2 class="geof">Kondisi Geografis Kota Bandung</h2>
+
+                <p class="desk_geof">
+                    Kota Bandung dikelilingi oleh pegunungan, sehingga bentuk morfologi wilayahnya bagaikan sebuah mangkuk raksasa, secara geografis kota ini terletak di tengah-tengah provinsi Jawa Barat, 
+                    serta berada pada ketinggian ±768 m di atas permukaan laut, dengan titik tertinggi berada di sebelah utara dengan ketinggian 1.050 meter di atas permukaan laut dan sebelah selatan merupakan 
+                    kawasan rendah dengan ketinggian 675 meter di atas permukaan laut.
+                    Bandung terletak di dataran tinggi, tepatnya di kawasan Lembah Bandung, yang dikelilingi oleh pegunungan, seperti Gunung Tangkuban Perahu di sebelah utara, Gunung Manglayang di
+                    sebelah Timur, serta Gunung Parahyangan di sebelah Selatan. Ketinggian rata-rata Kota Bandung sekitar 768 meter di atas permukaan laut (mdpl), yang membuatnya
+                    memiliki iklim yang sejuk. Letak geografis ini memberikan karakteristik iklim yang
+                    nyaman dan menjadi salah satu daya tarik kota ini sebagai tujuan wisata dan tempat tinggal.
+                </p>
+            </section>
+
+            <section>
+                <h2 class="peta">Peta Interaktif Kota Bandung</h2>
+                <div id="map" style="height: 400px; border-radius: 12px;"></div>
+            </section>
+
+            <script>
+                var map = L.map('map').setView([-6.9175, 107.6191], 13);
+
+                L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                    attribution: '&copy; OpenStreetMap contributors'
+                }).addTo(map);
+
+            </script>
+            
+            <section>
+                <h2>Batas Administrasi Kota Bandung</h2>
+                <table class="tabel">
+                    <thead>
+                        <tr>
+                            <th>Batas Wilayah</th>
+                            <th>Nama</th>
+                        </tr>
+                        <tbody>
+                            <tr>
+                                <td>Timur</td>
+                                <td>Kabupaten Bandung</td>
+                            </tr>
+                            <tr>
+                                <td>Selatan</td>
+                                <td>Kabupaten Bandung</td>
+                            </tr>
+                            <tr>
+                                <td>Utara</td>
+                                <td>Kabupaten Bandung</td>
+                            </tr>
+                            <tr>
+                                <td>Barat</td>
+                                <td>Kota Cimahi</td>
+                            </tr>
+                        </tbody>
+                    </thead>
+                </table>
+            </section>
+        </main>
+        <footer class="pages" id ="about">
+            <p>Author: Shafa Muthia</p>
+            <p><a href="mailto:shafamuthia3004@gmail.com">E-Mail: shafamuthia3004@gmail.com</a></p>
+        </footer>
+    </body>
+</body>
+</html>
