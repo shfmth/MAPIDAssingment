@@ -1,0 +1,235 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>Dummy Data</title>
+  </head>
+
+  <body class="w-screen h-screen flex flex-col justify-between">
+    <!-- Navbar -->
+    <nav class="bg-blue-400 p-5 flex justify-between items-center">
+      <h1 id="nav-title" class="text-2xl text-white font-bold">Post Content</h1>
+
+      <div class="flex gap-6 font-semibold">
+        <a id="navDummy" href="index.html" class="transition-all duration-300">
+          Dummy Data
+        </a>
+        <a id="navFetch" href="fetch.html" class="transition-all duration-300">
+          Fetch API
+        </a>
+      </div>
+    </nav>
+
+    <!-- Content -->
+    <main
+      class="w-screen h-screen overflow-auto flex flex-col justify-start items-center gap-10 p-4 md:px-[10%] xl:py-10 xl:px-[20%]"
+    >
+      <!-- Form -->
+      <form
+        id="postForm"
+        class="bg-blue-400 px-4 py-4 rounded flex flex-col justify-center items-center w-full gap-4"
+      >
+        <h2 id="formTitle" class="text-white text-xl font-bold">Tambah Post</h2>
+
+        <!-- simpan id saat edit -->
+        <input type="hidden" id="postId" />
+
+        <div class="text-white w-full flex flex-col">
+          <label for="title">Title</label>
+          <input
+            type="text"
+            placeholder="title"
+            name="title"
+            id="title"
+            class="px-2 py-1 border border-white rounded text-white bg-transparent"
+            required
+          />
+        </div>
+
+        <div class="text-white w-full flex flex-col">
+          <label for="description">Description</label>
+          <textarea
+            type="text"
+            placeholder="description"
+            name="description"
+            id="description"
+            class="px-2 py-1 border border-white rounded text-white bg-transparent resize-none"
+            required
+          ></textarea>
+        </div>
+
+        <button
+          id="submitBtn"
+          type="submit"
+          class="bg-white py-2 px-8 rounded text-blue-400 cursor-pointer font-bold"
+        >
+          Save
+        </button>
+      </form>
+
+      <!-- List Post -->
+      <section id="containerPost" class="w-full flex flex-col gap-4">
+        <!-- Data dari Dummy akan tampil di sini -->
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-blue-400 p-2 flex justify-center">
+      <p class="text-sm text-white">v.x.x.x © Copyright 2026 VO</p>
+    </footer>
+
+    <!-- JS -->
+    <!-- informasi
+    1. Index
+    Index dimulai dengan urutan 0.
+      umum -> 1,2,3,4,5,dst
+      komputer -> 0,1,2,3,4,dst
+    Index digunakan sebagai urutan untuk data array. 
+
+    2. Pemanggilan file JS
+    Tidak bisa memakai tag script yang sama dalam memanggil file js dan membuat js internal html.
+    - Contoh salah
+      <script src="script.js">
+        console.log
+      </script>
+    - Contoh Benar
+      <script src="script.js"></script>
+      <script>
+        console.log
+      </script>
+
+    3. Data Dummy
+    Data contoh yang digunakan sebagai testing.
+    -->
+    <script src="script.js"></script>
+    <script>
+
+      function saveToLocalStorage() {
+        localStorage.setItem("dataPost", JSON.stringify(dataPost));
+      }
+
+      // ======================
+      // DATA DUMMY
+      // ======================
+      let dataPost = JSON.parse(localStorage.getItem("dataPost")) || [
+        {
+          id: 1,
+          title: "Data Longsor",
+          description: "Data Longsor adalah data yang digunakan untuk mengidentifikasi kerawanan pergerakan tanah"
+        }
+      ];
+
+      // ======================
+      // SUBMIT FORM (CREATE + UPDATE)
+      // ======================
+      const formContent = document.getElementById("postForm");
+
+      formContent.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        const title = document.getElementById("title").value;
+        const description = document.getElementById("description").value;
+        const idInput = document.getElementById("postId").value;
+
+        const body = {
+          id: idInput ? Number(idInput) : dataPost.length + 1,
+          title,
+          description
+        };
+
+        if (idInput === "") {
+          // CREATE
+          dataPost.push(body);
+        } else {
+          // UPDATE (pakai ID)
+          dataPost = dataPost.map(item =>
+            item.id === Number(idInput) ? body : item
+          );
+          document.getElementById("postId").value = "";
+        }
+
+        saveToLocalStorage();
+        renderCard();
+        formContent.reset();
+      });
+
+      // ======================
+      // RENDER DATA (READ)
+      // ======================
+      function renderCard() {
+        const containerPost = document.getElementById("containerPost");
+        containerPost.innerHTML = "";
+
+        if (dataPost.length === 0) {
+          containerPost.innerHTML = `
+            <h3 class="text-lg text-center">Belum ada Content...</h3>
+          `;
+          return;
+        }
+
+        dataPost.forEach((post) => {
+          containerPost.innerHTML += `
+          <article class="bg-white border-2 rounded border-blue-500 p-4">
+            <p class="text-sm bg-blue-500 text-white text-center w-10">
+              ${post.id}
+            </p>
+
+            <h1 class="font-bold text-xl text-blue-500">
+              ${post.title}
+            </h1>
+
+            <p class="text-sm text-blue-800">
+              ${post.description}
+            </p>
+
+            <div class="flex gap-2 mt-3">
+
+              <button onclick="editData(${post.id})"
+              class="bg-yellow-400 px-4 py-1 rounded text-white text-sm cursor-pointer hover:bg-yellow-500">
+                Edit
+              </button>
+
+              <button onclick="deleteData(${post.id})"
+              class="bg-red-500 px-4 py-1 rounded text-white text-sm cursor-pointer hover:bg-red-600">
+                Delete
+              </button>
+
+            </div>
+          </article>
+          `;
+        });
+      }
+
+      // ======================
+      // EDIT DATA
+      // ======================
+      function editData(id) {
+        const post = dataPost.find(item => item.id === id);
+
+        document.getElementById("title").value = post.title;
+        document.getElementById("description").value = post.description;
+        document.getElementById("postId").value = id;
+      }
+
+      // ======================
+      // DELETE DATA
+      // ======================
+      function deleteData(id) {
+        const confirmDelete = confirm("Yakin mau hapus data ini?");
+        if (!confirmDelete) return;
+
+        dataPost = dataPost.filter(item => item.id !== id);
+        saveToLocalStorage();
+        renderCard();
+      }
+
+      // ======================
+      // INIT
+      // ======================
+      renderCard();
+    </script>
+  </body>
+</html>
